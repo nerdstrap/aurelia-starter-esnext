@@ -1,0 +1,26 @@
+{
+    "app_title": "Aurelia Starter",
+    "logo": "./images/logo.png",
+    "logo_alt": "Logo Alt",
+    "logo_small": "./images/logo-small.png",
+    "copyright": "\u00A9 YYYY Company Name",
+    "welcome_route": "Welcome",
+    "welcome_view_header": "Welcome",
+    "login_route": "Login",
+    "login_view_header": "Login",
+    "login_form_legend": "Login Form",
+    "username_label": "User Name",
+    "username_placeholder": "please enter your username",
+    "username_help_text": "Your username is your coporate network id",
+    "password_label": "Password",
+    "password_placeholder": "********",
+    "password_help_text": "Your password is your coporate network credentials",
+    "login_button": {
+        "text": "Login"
+    },
+    "errorMessages": {
+        "required": "${$displayName} is bunk!"
+    },
+    "self-service_route": "Login",
+    "self_service_view_header": "Login",
+}

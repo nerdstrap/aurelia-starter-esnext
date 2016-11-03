@@ -1,0 +1,23 @@
+.c-form {
+  padding: 1rem;
+
+  &__row {
+    padding: 1rem;
+  }
+
+}
+
+.c-cta {
+  &--alert {
+    color: $input-error-color;
+
+    &:hover, &:focus {
+      color: $input-error-color;
+    }
+
+    &:active, &:active:hover, &:active:focus {
+      transition-timing-function: ease-in;
+      transition-duration: 150ms;
+    }
+  }
+}

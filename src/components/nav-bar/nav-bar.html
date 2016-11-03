@@ -1,0 +1,18 @@
+<template bindable="router">
+    <div class="title-bar" data-responsive-toggle="title-bar-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title" i18n="app_title">Aurelia Starter</div>
+    </div>
+    <div class="top-bar" id="title-bar-menu">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text" i18n="app_title">Aurelia Starter</li>
+                <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+                    <a href.bind="row.href" i18n.bind="row.settings.i18n">
+                        ${row.title}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>
