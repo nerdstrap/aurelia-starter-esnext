@@ -42,6 +42,7 @@ System.config({
     "jquery": "npm:jquery@2.2.4",
     "moment": "npm:moment@2.15.2",
     "motion-ui": "npm:motion-ui@1.2.2",
+    "nprogress": "npm:nprogress@0.2.0",
     "text": "github:systemjs/plugin-text@0.0.8",
     "whatwg-fetch": "npm:whatwg-fetch@1.0.0",
     "zxcvbn": "npm:zxcvbn@4.4.1",
@@ -57,6 +58,9 @@ System.config({
     "github:jspm/nodelibs-process@0.1.2": {
       "process": "npm:process@0.11.9"
     },
+    "github:jspm/nodelibs-url@0.1.0": {
+      "url": "npm:url@0.10.3"
+    },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
     },
@@ -69,11 +73,21 @@ System.config({
       "extend": "npm:extend@3.0.0",
       "qs": "npm:qs@6.3.0"
     },
+    "npm:amdefine@1.0.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "module": "github:jspm/nodelibs-module@0.1.0",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:assert@1.4.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "util": "npm:util@0.10.3"
+    },
+    "npm:atob@1.1.3": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:aurelia-animator-css@1.0.1": {
       "aurelia-metadata": "npm:aurelia-metadata@1.0.2",
@@ -245,6 +259,14 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
+    "npm:css@2.2.1": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "inherits": "npm:inherits@2.0.1",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "source-map": "npm:source-map@0.1.43",
+      "source-map-resolve": "npm:source-map-resolve@0.3.1",
+      "urix": "npm:urix@0.1.0"
+    },
     "npm:font-awesome@4.6.3": {
       "css": "github:systemjs/plugin-css@0.1.32"
     },
@@ -264,6 +286,9 @@ System.config({
     "npm:motion-ui@1.2.2": {
       "jquery": "npm:jquery@2.2.4"
     },
+    "npm:nprogress@0.2.0": {
+      "css": "npm:css@2.2.1"
+    },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -271,6 +296,32 @@ System.config({
       "assert": "github:jspm/nodelibs-assert@0.1.0",
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "vm": "github:jspm/nodelibs-vm@0.1.0"
+    },
+    "npm:punycode@1.3.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:source-map-resolve@0.3.1": {
+      "atob": "npm:atob@1.1.3",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "resolve-url": "npm:resolve-url@0.2.1",
+      "source-map-url": "npm:source-map-url@0.3.0",
+      "urix": "npm:urix@0.1.0",
+      "url": "github:jspm/nodelibs-url@0.1.0"
+    },
+    "npm:source-map@0.1.43": {
+      "amdefine": "npm:amdefine@1.0.1",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:urix@0.1.0": {
+      "path": "github:jspm/nodelibs-path@0.1.0"
+    },
+    "npm:url@0.10.3": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "punycode": "npm:punycode@1.3.2",
+      "querystring": "npm:querystring@0.2.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",

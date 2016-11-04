@@ -1,20 +1,26 @@
 ﻿import {inject} from 'aurelia-framework';
 import {ValidationControllerFactory, ValidationController, ValidationRules} from 'aurelia-validation';
-// import {FoundationValidationRenderer} from 'foundation-form';
+import {InMemoryUserService} from './../../services/in-memory-user-service'
 
-@inject(ValidationControllerFactory)
+@inject(ValidationControllerFactory, InMemoryUserService)
 export class BasicLoginForm {
     username = '';
     password = '';
     controller = null;
+    userService = null;
 
-    constructor(controllerFactory) {
+    constructor(controllerFactory, api) {
         this.controller = controllerFactory.createForCurrentScope();
-        // this.controller.addRenderer(new FoundationValidationRenderer());
+        this.api = api;
     }
 
     login() {
         let errors = this.controller.validate();
+        this.api.login(this.username, this.password)
+            .then(user => {
+                let url = this.router.generate('details', {id: movie.id});
+                this.router.navigate(url);
+            });
     }
 }
 

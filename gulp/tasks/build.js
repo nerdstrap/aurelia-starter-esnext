@@ -17,7 +17,6 @@ var notify = require('gulp-notify');
 var exec = require('child_process').exec;
 var htmlmin = require('gulp-htmlmin');
 
-
 // transpiles script file to SystemJS format
 // plumber prevents 'pipe breaking'
 gulp.task('build-system', function () {

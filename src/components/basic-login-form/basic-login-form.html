@@ -4,23 +4,19 @@
             <validation-summary errors.bind="errors" autofocus.bind="controller.validateTrigger === 'manual'">
             </validation-summary>
             <legend i18n="login_form_legend">Login Form</legend>
-            <!--<ul><li repeat.for="error of controller.errors">${error.message}</li></ul>-->
             <div class="form-row">
                 <label for="username-input" i18n="username_label">Username</label>
-                <input id="username-input" type="text" placeholder="please enter your username" value.bind="username & validate" i18n="[placeholder]username_placeholder" aria-describedby="username-help-text">
-                <p class="help-text" id="username-help-text" i18n="username_help_text">Your username is your coporate network id</p>
+                <input id="username-input" type="text" placeholder="please enter your username" value.bind="username & validate" i18n="[placeholder]username_placeholder">
             </div>
             <div class="form-row">
                 <label for="password-input" i18n="password_label">Password</label>
-                <input id="password-input" type="password" placeholder="********" value.bind="password & validate" i18n="[placeholder]password_placeholder" aria-describedby="password-help-text">
-                <p class="help-text" id="password-help-text" i18n="password_help_text">Your password is your corporate network credentials</p>
+                <input id="password-input" type="password" placeholder="********" value.bind="password & validate" i18n="[placeholder]password_placeholder">
             </div>
             <div class="form-row">
                 <button type="submit" class="button">
                     <span i18n="login_button.text">Login</span>
                 </button>
             </div>
-            <div class="form-row"></div>
         </fieldset>
     </form>
 </template>

@@ -1,4 +1,4 @@
-﻿export class ChannelInfo {
+﻿export class ContactInfo {
     method;
     contact;
     verified;

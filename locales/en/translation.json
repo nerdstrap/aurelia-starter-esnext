@@ -18,9 +18,8 @@
     "login_button": {
         "text": "Login"
     },
-    "errorMessages": {
-        "required": "${$displayName} is bunk!"
-    },
-    "self-service_route": "Login",
-    "self_service_view_header": "Login",
+    "users_route": "Users",
+    "users_view_header": "Users",
+    "user-info_route": "User Info",
+    "user-info_view_header": "User Info"
 }

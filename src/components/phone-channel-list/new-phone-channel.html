@@ -1,0 +1,18 @@
+﻿<template>
+    <form submit.delegate="continue()" validation-renderer="foundation-form" validation-errors.bind="errors">
+        <fieldset class="fieldset">
+            <validation-summary errors.bind="errors" autofocus.bind="controller.validateTrigger === 'manual'">
+            </validation-summary>
+            <legend i18n="login_form_legend">Login Form</legend>
+            <div class="form-row">
+                <label for="phone-input" i18n="phone_label">Phone</label>
+                <input id="phone-input" type="number" placeholder="please enter your phone" value.bind="phone & validate" i18n="[placeholder]phone_placeholder" aria-describedby="phone-help-text">
+            </div>
+            <div class="form-row">
+                <button type="submit" class="button">
+                    <span i18n="continue_button.text">Continue</span>
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</template>

@@ -14,7 +14,6 @@ export class RouterConfig {
             config.title = 'Aurelia';
             config.addAuthorizeStep(AuthorizeStep);
             config.map([
-
                 {
                     route: ['', 'welcome'],
                     name: 'welcome',
@@ -38,13 +37,23 @@ export class RouterConfig {
                     }
                 },
                 {
-                    route: 'self-service',
-                    name: 'self-service',
-                    moduleId: 'routes/self-service/self-service',
+                    route: 'users',
+                    name: 'users',
+                    moduleId: 'routes/users/users',
                     nav: true,
-                    title: 'Self Service',
+                    title: 'Users',
                     settings: {
-                        i18n: 'self-service_route',
+                        i18n: 'users_route',
+                        roles: []
+                    }
+                },
+                {
+                    route: 'users/:id/user-info',
+                    name: 'user-info',
+                    moduleId: 'routes/users/user-info',
+                    title: 'User Info',
+                    settings: {
+                        i18n: 'user-info_route',
                         roles: []
                     }
                 }

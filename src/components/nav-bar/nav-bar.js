@@ -1,16 +1,16 @@
 ﻿import {bindable} from 'aurelia-framework';
 import {inject} from 'aurelia-framework';
-import {AuthService} from 'aurelia-auth';
+import {InMemoryUserService} from './../../services/in-memory-user-service';
 
 export class NavBar {
-    _isAuthenticated = false;
-    @bindable router = null;
-
-    constructor(auth) {
-        this.auth = auth;
+    static inject() {
+        return [InMemoryUserService];
     }
 
-    get isAuthenticated() {
-        return this.auth.isAuthenticated();
-    };
+    @bindable router = null;
+
+    constructor(api) {
+        this.api = api;
+    }
+
 }

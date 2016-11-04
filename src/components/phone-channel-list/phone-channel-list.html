@@ -1,0 +1,6 @@
+﻿<template>
+    <require from="./phone-channel-list-item"></require>
+    <div class="list">
+        <phone-channel-list-item repeat.for="item of listItems" item.bind="item" remove.call="deleteItem(item)"></phone-channel-list-item>
+    </div>
+</template>

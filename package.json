@@ -97,6 +97,7 @@
       "jquery": "npm:jquery@^2.2.4",
       "moment": "npm:moment@^2.0.0",
       "motion-ui": "npm:motion-ui@^1.2.2",
+      "nprogress": "npm:nprogress@^0.2.0",
       "text": "github:systemjs/plugin-text@^0.0.8",
       "whatwg-fetch": "npm:whatwg-fetch@^1.0.0",
       "zxcvbn": "npm:zxcvbn@^4.4.0"
