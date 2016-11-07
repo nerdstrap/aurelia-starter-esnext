@@ -1,0 +1,29 @@
+﻿{
+	"channels": [
+		{
+			"channelType": "phone",
+			"contactInfo": "6145551212",
+			"verified": "true",
+			"hasActiveToken": "false"
+		},
+		{
+			"channelType": "phone",
+			"contactInfo": "3305551212",
+			"verified": "false",
+			"hasActiveToken": "false"
+		},
+		{
+			"channelType": "email",
+			"contactInfo": "john.smith@aep.com",
+			"verified": "true",
+			"hasActiveToken": "false"
+		},
+
+		{
+			"channelType": "email",
+			"contactInfo": "john.smith@yahoo.com",
+			"verified": "false",
+			"hasActiveToken": "false"
+		}
+	]
+}

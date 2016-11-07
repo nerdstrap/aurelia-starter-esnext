@@ -1,0 +1,30 @@
+﻿{
+	"answers": [
+		{
+			"questionId": "1",
+			"questionText": "Where did you and your spouse first meet?",
+			"answer": "meet"
+		},
+		{
+			"questionId": "2",
+			"questionText": "What was the first name of your first roommate?",
+			"answer": "roommate"
+		},
+		{
+			"questionId": "3",
+			"questionText": "What was your favorite restaurant in college?",
+			"answer": "college"
+		},
+
+		{
+			"questionId": "4",
+			"questionText": "What is the name of a memorable place?",
+			"answer": "place"
+		},
+		{
+			"questionId": "5",
+			"questionText": "What is the first name of your best friend?",
+			"answer": "friend"
+		}
+	]
+}
