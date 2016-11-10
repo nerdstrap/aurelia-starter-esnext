@@ -1,0 +1,38 @@
+﻿[
+	{
+		"SessionId": "__session",
+		"UserId": "lowrisk",
+		"Success": true,
+		"ChallengeQuestionAnswerId": "1",
+		"ChallengeQuestionId": "1",
+		"ChallengeQuestionText": "Where did you and your spouse first meet?",
+		"UserAnswerText": "meet"
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "mediumrisk",
+		"Success": true,
+		"ChallengeQuestionAnswerId": "1",
+		"ChallengeQuestionId": "1",
+		"ChallengeQuestionText": "Where did you and your spouse first meet?",
+		"UserAnswerText": "meet"
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "highrisk",
+		"Success": true,
+		"ChallengeQuestionAnswerId": "1",
+		"ChallengeQuestionId": "1",
+		"ChallengeQuestionText": "Where did you and your spouse first meet?",
+		"UserAnswerText": "meet"
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "johnsmith",
+		"Success": true,
+		"ChallengeQuestionAnswerId": "1",
+		"ChallengeQuestionId": "1",
+		"ChallengeQuestionText": "Where did you and your spouse first meet?",
+		"UserAnswerText": "meet"
+	}
+]

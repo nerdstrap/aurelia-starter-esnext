@@ -1,0 +1,50 @@
+﻿[
+	{
+		"SessionId": "__session",
+		"UserId": "lowrisk",
+		"ActionCode": "ALLOW",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "mediumrisk",
+		"ActionCode": "ALLOW",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "highrisk",
+		"ActionCode": "ALLOW",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "johnsmith",
+		"ActionCode": "ALLOW",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "token",
+		"ActionCode": "TOKEN",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "badauth",
+		"ActionCode": "DENY",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "failedcredentials",
+		"ActionCode": "DENY",
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "lockeduser",
+		"ActionCode": "DENY",
+		"Success": true
+	}
+]

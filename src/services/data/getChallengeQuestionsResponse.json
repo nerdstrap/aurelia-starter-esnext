@@ -1,0 +1,26 @@
+﻿[
+	{
+		"ChallengeQuestions": [
+			{
+				"Id": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?"
+			},
+			{
+				"Id": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?"
+			},
+			{
+				"Id": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?"
+			},
+			{
+				"Id": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?"
+			},
+			{
+				"Id": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?"
+			}
+		]
+	}
+]

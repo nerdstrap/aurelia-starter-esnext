@@ -1,0 +1,30 @@
+﻿[
+	{
+		"SessionId": "__session",
+		"UserId": "lowrisk",
+		"Success": true,
+		"ContactType": "Phone",
+		"ContactInfo": "6145551212"
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "mediumrisk",
+		"Success": true,
+		"ContactType": "Phone",
+		"ContactInfo": "6145551212"
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "highrisk",
+		"Success": true,
+		"ContactType": "Phone",
+		"ContactInfo": "6145551212"
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "johnsmith",
+		"Success": true,
+		"ContactType": "Phone",
+		"ContactInfo": "6145551212"
+	}
+]

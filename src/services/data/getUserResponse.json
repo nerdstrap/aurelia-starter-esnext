@@ -1,0 +1,466 @@
+﻿[
+	{
+		"SessionId": "__session",
+		"UserId": "lowrisk",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "mediumrisk",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "highrisk",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "johnsmith",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "token",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "badauth",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "failedcredentials",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "lockeduser",
+		"Success": true,
+		"PhoneInfos": [
+			{
+				"PhoneNumber": "6145551212",
+				"Verified": true
+			},
+			{
+				"PhoneNumber": "3305551212",
+				"Verified": true
+			}
+		],
+		"EmailInfos": [
+			{
+				"EmailAddress": "lowrisk@aep.com",
+				"Verified": true
+			},
+			{
+				"EmailAddress": "lowrisk@yahoo.com",
+				"Verified": false
+			}
+		],
+		"ChallengeQuestionAnswers": [
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "1",
+				"ChallengeQuestionText": "Where did you and your spouse first meet?",
+				"UserAnswerText": "meet"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "2",
+				"ChallengeQuestionText": "What was the first name of your first roommate?",
+				"UserAnswerText": "roommate"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "3",
+				"ChallengeQuestionText": "What was your favorite restaurant in college?",
+				"UserAnswerText": "college"
+			},
+
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "4",
+				"ChallengeQuestionText": "What is the name of a memorable place?",
+				"UserAnswerText": "place"
+			},
+			{
+				"Id": "1",
+				"ChallengeQuestionId": "5",
+				"ChallengeQuestionText": "What is the first name of your best friend?",
+				"UserAnswerText": "friend"
+			}
+		]
+	}
+]

@@ -1,0 +1,50 @@
+﻿[
+	{
+		"SessionId": "__session",
+		"UserId": "lowrisk",
+		"DeviceData": "__devicedata",
+		"ActionCode": "VERIFIED",
+		"CredentialTypes": [ "RSA", "Email", "Password", "Questions", "Pin", "SMS" ],
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "mediumrisk",
+		"DeviceData": "__devicedata",
+		"ActionCode": "CHALLENGE",
+		"CredentialTypes": [ "Password", "Questions" ],
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "highrisk",
+		"DeviceData": "__devicedata",
+		"ActionCode": "CHALLENGE",
+		"CredentialTypes": [ "Password", "Questions" ],
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "johnsmith",
+		"DeviceData": "__devicedata",
+		"ActionCode": "VERIFIED",
+		"CredentialTypes": [ "Password", "Questions" ],
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "badgetuser",
+		"DeviceData": "__devicedata",
+		"ActionCode": "CHALLENGE",
+		"CredentialTypes": [ "Password", "Questions" ],
+		"Success": true
+	},
+	{
+		"SessionId": "__session",
+		"UserId": "newuser",
+		"DeviceData": "__devicedata",
+		"ActionCode": "ENROLL",
+		"CredentialTypes": [ "Password", "Questions" ],
+		"Success": true
+	}
+]
