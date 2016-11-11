@@ -1,0 +1,23 @@
+<template bindable="router">
+	<div class="top-bar">
+		<div class="top-bar-title">
+			<span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+				<button id="topbarMenuButton" class="menu-icon dark" type="button" data-toggle></button>
+			</span>
+			<strong class="title">
+				<a href="#/"><img data-src="./../images/logo-small.gif" i18n="logo;[alt]logo_alt" alt="Logo"/> Password Reset</a>
+			</strong>
+		</div>
+		<div id="responsive-menu">
+			<div class="top-bar-right">
+				<ul class="menu vertical medium-horizontal">
+					<li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+						<a class="topbarMenuItem" href.bind="row.href" t.bind="row.settings.t">
+							${row.title}
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,226 @@
+﻿<template>
+    <div class="reveal" id="service_error_modal">
+        <div class="red">
+            <div class="top-padding">
+                <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i>
+                <p class="lead">Critical error!</p>
+            </div>
+        </div>
+        <div>
+            <p> Please try again or call the IT Service Desk for assistance if you continue to experience the error.</p>
+            <button class="button primary radius" data-close aria-label="Close modal" type="button" click.delegate="pageRefresh()">
+                <span aria-hidden="true">Ok</span>
+            </button>
+        </div>
+    </div>
+    <form id="login_form" name="login" autocomplete="off" data-abide validation-errors.bind="userIdErrors">
+        <div data-abide-error role="alert" class="alert callout" style="display: none;">
+            <p><i class="fi-alert"></i> There are some errors below, please try again.</p>
+        </div>
+        <div class="row">
+            <div class="small-12 columns">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 text-center columns">
+                <img src="../images/smallAEPLogo.gif" alt="AEP Logo" width="75" height="75" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <div class="row">
+                    <div class="medium-4 large-4 medium-centered columns" id="userIdDIV"
+                         class.bind="userIdErrors.length ? 'has-error' : ''">
+                        <label for="userIdInput">
+                            <strong>Username</strong>
+                            <input disabled.bind="userIdInputIsDisabled" id="userIdInput" name="id" value.two-way="user.userId  & validate" focus.bind="user.userIdInputHasFocus" type="text" placeholder="AEP Network ID" aria-describedby="Enter your AEP Network ID" required/> 
+                            <span class="form-error is-visible" repeat.for="errorInfo of userIdErrors">
+                                ${errorInfo.error.message}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="medium-4 large-4 medium-centered columns" if.bind="defaultLoginIsVisible" id="defaultPasswordDIV">
+                        <label for="defaultPasswordInput">
+                            <strong id="passwordLabel">Enter your password:</strong>
+                            <input id="defaultPasswordInput" value.bind="user.passwordInput" focus.bind="user.defaultPasswordHasFocus" type="password" placeholder="******"/>
+                            <span id="defaultPasswordInputErrorMsg" class="form-error">
+                                Please enter your AEP Network password.
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="small-12 medium-8 large-6 medium-centered columns" show.bind="authOtherMethodsDivIsVisible" id="authOtherMethodsDiv">
+                        <label for="aiPinInput"><strong id="aiPinLabel">Select one of the authentication methods below to login in:</strong></label>
+                        <ul class="accordion" data-accordion data-allow-all-closed="true">
+
+                            <li class="accordion-item" show.bind="user.passwordIsVisible" data-accordion-item data-allow-all-closed="true" id="accordItemPassword">
+                                <a href="#" class="accordion-title">Password</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <label for="aiPasswordInput"><strong id="aiPasswordLabel">Enter your password:</strong></label>
+                                    <input id="aiPasswordInput" value.bind="user.passwordInput" type="password" placeholder="******" keyup.delegate="defaultPasswordInputKeyup($event)" />
+                                    <span id="aiPasswordInputErrorMsg" class="form-error">
+                                        Please enter your AEP Network ID here.
+                                    </span>
+                                    <a id="otp_password_btn" class="primary button radius" click.delegate="login('passwordAI')">Login with password</a>
+                                </div>
+                            </li>
+
+                            <li class="accordion-item" show.bind="user.pinIsVisible" data-accordion-item data-allow-all-closed="true" id="accordItemPin">
+                                <a href="#" class="accordion-title">Pin</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <label for="aiPinInput"><strong id="aiPinLabel">Enter your pin:</strong></label>
+                                    <input id="aiPinInput" value.bind="user.pinInput" type="password" placeholder="Enter your security pin." pattern="alpha_numeric" />
+                                    <span class="form-error">
+                                        Please enter your security Pin.
+                                    </span>
+                                    <a id="pinLoginButton" class="primary button radius" click.delegate="login('pin')">Login with pin</a>
+                                </div>
+                            </li>
+
+                            <li class="accordion-item" show.bind="user.questionsIsVisible" data-accordion-item data-allow-all-closed="true" id="accordItemQA">
+                                <a href="#" class="accordion-title">Security Questions</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <div class="row">
+                                        <div class="small-12 columns" id="challengeQuestion">
+                                            <h5 id="aiQuestionLabel">Answer your security questions:</h5>
+                                            <div repeat.for="question of user.questionList">
+                                                <label for="question_input"><strong>${question.challengeQuestionText}</strong></label>
+                                                <input id="question_input" value.bind="question.answer" type="password" placeholder="Example: Smith" pattern="alpha_numeric" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="small-12 columns" id="challengeQuestion">
+                                            <a id="qaLoginButton" class="primary button radius" click.delegate="login('questions')">Login using your security questions</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="accordion-item" show.bind="user.smsIsVisible" data-accordion-item id="accordItemSMS">
+                                <a href="#" class="accordion-title">SMS One Time Passcode</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <div class="row" id="smsOTPSelectDiv" if.bind="!activePhoneOTPChannel">
+                                        <div class="large-12 large-centered columns">
+                                            <h5>Choose the number to use:</h5>
+                                            <ul class="no-bullet">
+                                                <li repeat.for="smsNumber of user.channelList" if.bind="smsNumber.type == 'phone'">
+                                                    <label>${smsNumber.contactInfo}</label>
+                                                    <a href="#" class="primary button radius small" click.delegate="sendOTP(smsNumber)">Send code to this number</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="smsOTPVerify" class="large-12 large-centered columns" if.bind="activePhoneOTPChannel">
+                                            <div id="smsOTPCallout" class="callout alert">
+                                                <center>
+                                                    <p><strong>Sent Code To:</strong><br /><h5>${activePhoneOTPChannel.contactInfo}</h5></p>
+                                                    <p>An SMS text messaege was sent to your phone containing the code required for login. Please retreive and enter it below. The code is valid for the next <b>${activePhoneOTPChannel.counter}</b> mins.</p>
+                                                </center>
+                                            </div>
+                                            <input id="smsOTPInput" value.bind="user.smsInput" type="text" placeholder="Enter your one-time code." pattern="number">
+                                            <span class="is-hidden form-error" id="emailInputError">
+                                                Incorrect code. Please try again.
+                                            </span>
+                                            <a href="#" id="smsOTPLoginButton" class="expanded primary button radius" click.delegate="login('sms')">Login with One-time SMS code.</a>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="smsOTPCancleButtonDiv" if.bind="activePhoneOTPChannel">
+                                        <div class="large-12 medium-centered columns">
+                                            <a href="#" id="smsOTPCancelButton" class="expanded alert button radius" click.delegate="cancelOTP(channel)">Cancel Code Verification</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="accordion-item" show.bind="user.emailIsVisible" data-accordion-item id="accordItemEmail">
+                                <a href="#" class="accordion-title">E-mail One Time Passcode</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <div class="row" id="emailOTPSelectDiv" if.bind="!activeEmailOTPChannel">
+                                        <div class="large-12 large-centered columns">
+                                            <h5>Choose the address to use:</h5>
+                                            <ul class="no-bullet">
+                                                <li repeat.for="userEmail of user.channelList" if.bind="userEmail.type == 'email'">
+                                                    <label for="emailexample1">${userEmail.contactInfo}</label>
+                                                    <a href="#" id="emailExample1Send" class="primary button radius small" click.delegate="sendOTP(userEmail)">Send code to this address</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div id="emailOTPVerify" class="large-12 large-centered columns" if.bind="activeEmailOTPChannel">
+                                            <div id="emailOTPCallout" class="callout alert">
+                                                <center>
+                                                    <p><strong>Sent Code To:</strong><br /><h5>${activeEmailOTPChannel.contactInfo}</h5></p>
+                                                    <p>An email was sent containing the code required for login. Please retreive and enter it below. The code is valid for the next <b>${activeEmailOTPChannel.counter}</b> mins.</p>
+                                                </center>
+                                            </div>
+                                            <input id="emailOTPInput" value.bind="user.emailInput" type="text" placeholder="Enter your one-time code." pattern="number">
+                                            <span class="is-hidden form-error" id="emailInputError">
+                                                Incorrect code. Please try again.
+                                            </span>
+                                            <a href="#" id="emailOTPLoginButton" class="expanded primary button radius" click.delegate="login('email')">Login with One-time Email code.</a>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="emailOTPCancleButtonDiv" if.bind="activeEmailOTPChannel">
+                                        <div class="large-12 medium-centered columns">
+                                            <a href="#" id="emailOTPCancelButton" class="expanded alert button radius" click.delegate="cancelOTP(channel)">Cancel Code Verification</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="accordion-item" show.bind="user.rsaIsVisible" data-accordion-item data-allow-all-closed="true" id="accordItemRSA">
+                                <a href="#" class="accordion-title">RSA SecurID</a>
+                                <div class="accordion-content" data-tab-content>
+                                    <label for="aiRSAInput"><strong id="aiRSALabel">Enter your RSA Pin+Token:</strong></label>
+                                    <input id="aiRSAInput" value.bind="user.rsaInput" type="password" placeholder="Pin+Token" pattern="number" />
+                                    <span class="form-error">
+                                        Please enter your RSA Pin + Token.
+                                    </span>
+                                    <a href="#" id="rsaLoginButton" class="primary button radius" click.delegate="login('rsa')">Login with RSA token</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column row" id="loginButtonsDIV">
+            <div class="medium-4 large-4 medium-centered columns">
+                <div if.bind="submitUserIDButtonDivIsVisible" id="submitUserIDButtonDiv" class="small-12 columns text-center">
+                    <button disabled.bind="userIdErrors.length" href="#" id="nextButtonID" focus.bind="nextButtonIDHasFocus" class="expanded large button radius" click.trigger="submitUser()">Next</button>
+                </div>
+                <div if.bind="submitLoginButtonDivIsVisible" id="submitLoginButtonDiv" class="small-12 columns text-center">
+                    <button href="#" id="loginButtonID" class="expanded large button radius" click.trigger="login('passwordDefault')">Login</button>
+                </div>
+                <div id="showLoginOptionsDiv" class="small-12 columns text-center" if.bind="user.showLoginOptionsIsVisible">
+                    <div class="small-12 columns text-center">or</div>
+                    <a href="#" id="loginOtherActionID" click.trigger="displayOptions()">Forgot Password<br />or Login using other method?</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="large-12 columns">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="small-12 medium-8 large-6 small-centered text-center columns">
+            <div class="callout secondary">
+                <p><small>This system is for the use of <strong>AUTHORIZED USERS ONLY</strong>. Unauthorized users should not attempt to access this system. Individuals using this system are subject to having their activities on this system monitored and recorded by system personnel. Anyone using this system expressly consents to such monitoring and is advised that if such monitoring reveals possible evidence of criminal activity, system personnel may provide the evidence of such activity to law enforcement officials.</small></p>
+            </div>
+        </div>
+    </div>
+</template>
+
