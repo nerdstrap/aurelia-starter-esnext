@@ -3,19 +3,21 @@ import {ValidationRules, ValidationController} from "aurelia-validation";
 
 @inject(NewInstance.of(ValidationController))
 export class User {
-    id = 0;
-    username = '';
-    password = '';
-    session = '';
+    sessionId = '';
+    deviceData = '';
+    userId = '';
+    credentialType = '';
+    credentials = '';
 
     constructor(controller) {
         this.controller = controller;
 
         ValidationRules
-            .ensure(m => m.id).required()
-            .ensure(m => m.username).required()
-            .ensure(m => m.password).required()
-            .ensure(m => m.session).required()
+            .ensure(m => m.sessionId).required()
+            .ensure(m => m.deviceData).required()
+            .ensure(m => m.userId).required()
+            .ensure(m => m.credentialType).required()
+            .ensure(m => m.credentials).required()
             .on(this);
     }
 }

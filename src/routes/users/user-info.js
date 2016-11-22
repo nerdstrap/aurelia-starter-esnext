@@ -1,12 +1,11 @@
 ﻿import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 import {EventAggregator} from 'aurelia-event-aggregator';
-import {User} from './../../models/user';
 import {InMemoryUserService} from './../../services/in-memory-user-service';
 
 @inject(Router, EventAggregator, InMemoryUserService)
 export class UserInfo {
-    user;
+    userId;
 
     constructor(router, eventAggregator, api) {
         this.router = router;
@@ -17,8 +16,8 @@ export class UserInfo {
     activate(params, routeConfig) {
         this.routeConfig = routeConfig;
 
-        return this.api.getUserInfo(params.id).then(user => {
-            this.user = user;
+        return this.api.getUser(params.userId).then(response => {
+            this.userId = response.userId;
         });
     }
 }

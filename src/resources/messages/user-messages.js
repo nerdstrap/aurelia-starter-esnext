@@ -1,7 +1,7 @@
-﻿export class UserAnalyzed {
-    constructor(user) {}
+﻿export class AnalyzeUserDone {
+    constructor(response) {}
 }
 
-export class UserAuthenticated {
-    constructor(user) {}
+export class AuthenticateUserDone {
+    constructor(response) {}
 }

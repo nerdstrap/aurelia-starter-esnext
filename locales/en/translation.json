@@ -9,13 +9,19 @@
     "login_route": "Login",
     "login_view_header": "Login",
     "login_form_legend": "Login Form",
-    "username_label": "User Name",
-    "username_placeholder": "please enter your username",
-    "username_help_text": "Your username is your coporate network id",
-    "password_label": "Password",
-    "password_placeholder": "********",
-    "password_help_text": "Your password is your coporate network credentials",
-    "login_button": {
+    "user-id_label": "User Id",
+    "user-id_placeholder": "please enter your user id",
+    "user-id_help_text": "Your user id is your corporate network id",
+    "analyze-user_button": {
+        "text": "Next"
+    },
+    "credentials_label": "Credentials",
+    "credentials_placeholder": "********",
+    "credentials_help_text": "Your credentials are your corporate network credentials",
+    "pin_label": "PIN",
+    "pin_placeholder": "********",
+    "pin_help_text": "Your PIN is your corporate network PIN",
+    "authenticate-user_button": {
         "text": "Login"
     },
     "users_route": "Users",

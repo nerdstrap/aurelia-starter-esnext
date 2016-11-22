@@ -1,5 +1,6 @@
 ﻿export class ContactInfo {
-    method;
+    contactType;
     contact;
     verified;
+    tokenSent;
 }
