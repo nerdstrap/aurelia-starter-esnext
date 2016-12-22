@@ -1,7 +1,13 @@
 ﻿export class AnalyzeUserDone {
-    constructor(response) {}
+    data;
+    constructor(data) {
+        this.data = data;
+    }
 }
 
 export class AuthenticateUserDone {
-    constructor(response) {}
+    data;
+    constructor(data) {
+        this.data = data;
+    }
 }

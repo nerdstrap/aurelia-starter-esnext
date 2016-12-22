@@ -1,26 +1,35 @@
-﻿import {inject, bindable} from 'aurelia-framework';
+﻿import {bindable, bindingMode, BindingEngine, inject} from 'aurelia-framework';
 
+@inject(BindingEngine)
 export class PhoneChannelList {
-    listItems = [];
-    @bindable newListItem;
+    @bindable({defaultBindingMode: bindingMode.twoWay}) items = [];
+    @bindable newItem;
 
-    constructor() {
+    constructor(bindingEngine) {
+        this.bindingEngine = bindingEngine;
     }
 
-    activate(bindingContext) {
-        this.listItems = bindingContext;
+    attached() {
+        this.subscription = this.bindingEngine
+            .collectionObserver(this.items)
+            .subscribe(this.listChanged);
     }
 
-    newItem() {
-        if (this.newListItem) {
-            this.listItems.push(this.newListItem);
+    detached() {
+        this.subscription.dispose();
+    }
+
+    addItem() {
+        if (this.newItem) {
+            this.items.push(newItem);
         }
     }
 
-    deleteItem(item) {
-        var index = this.listItems.indexOf(item);
-        if (index > -1) {
-            this.listItems.splice(index, 1);
-        }
+    deleteItem(index) {
+        this.items.splice(index, 1);
+    }
+
+    listChanged(slice) {
+        console.log('list order changed', slice);
     }
 }

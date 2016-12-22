@@ -48,8 +48,8 @@ export class Enum {
     }
 
     symbols() {
-        var syms = [];
-        var self = this;
+        let syms = [];
+        let self = this;
         Object.keys(this).forEach(function (k) {
             syms.push(self[k]);
         });
@@ -95,12 +95,12 @@ export const CredentialType = new Enum({
 });
 
 
-var determineShiftedValues = (total, highestValue) => {
-    var values = [];
-    var runningTotal = total;
-    for (var i = highestValue; i >= 0; i--) {
+let determineShiftedValues = (total, highestValue) => {
+    let values = [];
+    let runningTotal = total;
+    for (let i = highestValue; i >= 0; i--) {
         if (runningTotal >> i === 1) {
-            var binValue = Math.pow(2, i);
+            let binValue = Math.pow(2, i);
             runningTotal = runningTotal - binValue;
             values.push(binValue);
         }
@@ -108,7 +108,7 @@ var determineShiftedValues = (total, highestValue) => {
     return values;
 };
 
-export var EnumeratedTypeHelper = function () {
+export let EnumeratedTypeHelper = function () {
     return {
         asArray: (type, value) => {
             if (value === undefined) {

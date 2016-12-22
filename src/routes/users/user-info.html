@@ -1,7 +1,7 @@
 ﻿<template>
     <h4 i18n="user-info_view_header">User Info</h4>
-    <p>${user.username}</p>
+    <p>${user.userInfo.fullName}</p>
     <hr>
-    <h6>Phone Channels</h6>
-    <compose model.bind="user.phoneInfos" view-model="../../components/phone-channel-list/phone-channel-list"></compose>
+    <h6>Phone Infos</h6>
+    <phone-channel-list items.bind="user.phoneInfos"></phone-channel-list>
 </template>

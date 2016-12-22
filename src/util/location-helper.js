@@ -7,8 +7,8 @@ function LocationHelperFn() {
             }
             key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
             key = key.replace("$", "\\$");
-            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
-            var qs = regex.exec(window.location.href);
+            let regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+            let qs = regex.exec(window.location.href);
             if (qs == null) {
                 return default_;
             } else {
@@ -18,4 +18,4 @@ function LocationHelperFn() {
     };
 }
 
-export var LocationHelper = new LocationHelperFn();
+export let LocationHelper = new LocationHelperFn();

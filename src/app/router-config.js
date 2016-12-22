@@ -10,7 +10,7 @@ export class RouterConfig {
     }
 
     configure() {
-        var routerConfig = function (config) {
+        let routerConfig = function (config) {
             config.title = 'Aurelia';
             config.addAuthorizeStep(AuthorizeStep);
             config.map([
@@ -24,8 +24,7 @@ export class RouterConfig {
                         i18n: 'welcome_route',
                         roles: []
                     }
-                },
-                {
+                }, {
                     route: 'login',
                     name: 'login',
                     moduleId: 'routes/login/login',
@@ -35,19 +34,7 @@ export class RouterConfig {
                         i18n: 'login_route',
                         roles: []
                     }
-                },
-                {
-                    route: 'users',
-                    name: 'users',
-                    moduleId: 'routes/users/users',
-                    nav: true,
-                    title: 'Users',
-                    settings: {
-                        i18n: 'users_route',
-                        roles: []
-                    }
-                },
-                {
+                }, {
                     route: 'users/:id/user-info',
                     name: 'user-info',
                     moduleId: 'routes/users/user-info',

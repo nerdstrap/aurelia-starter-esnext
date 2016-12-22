@@ -16,8 +16,12 @@ export class UserInfo {
     activate(params, routeConfig) {
         this.routeConfig = routeConfig;
 
-        return this.api.getUser(params.userId).then(response => {
-            this.userId = response.userId;
+        let sessionId = "__sessionId";
+        let transactionId = "__transactionId";
+        let deviceTokenCookie = "__deviceTokenCookie";
+        let userId = params.id;
+        return this.api.getUser(sessionId, transactionId, deviceTokenCookie, userId).then(response => {
+            this.user = response;
         });
     }
 }

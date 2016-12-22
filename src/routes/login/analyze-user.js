@@ -1,22 +1,26 @@
 ﻿import {inject, computedFrom} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
-import {ValidationControllerFactory, ValidationController, ValidationRules} from 'aurelia-validation';
 import {EventAggregator} from 'aurelia-event-aggregator';
-import {InMemoryUserService} from './../../services/in-memory-user-service'
+import {ValidationControllerFactory, ValidationController, ValidationRules} from 'aurelia-validation';
+import {InMemoryUserService} from './../../services/in-memory-user-service';
 import {AnalyzeUserDone} from './../../resources/messages/user-messages';
 
-@inject(Router, ValidationControllerFactory, EventAggregator, InMemoryUserService)
+@inject(Router, EventAggregator, ValidationControllerFactory, InMemoryUserService)
 export class AnalyzeUser {
     userId;
     userIdHasFocus = true;
     controller = null;
     api = null;
 
-    constructor(router, controllerFactory, eventAggregator, api) {
+    constructor(router, eventAggregator, controllerFactory, api) {
         this.router = router;
-        this.controller = controllerFactory.createForCurrentScope();
         this.eventAggregator = eventAggregator;
+        this.controller = controllerFactory.createForCurrentScope();
         this.api = api;
+    }
+
+    activate(model) {
+        this.userId = model.userId;
     }
 
     @computedFrom('userId')
@@ -27,19 +31,13 @@ export class AnalyzeUser {
 
     analyzeUser() {
         let errors = this.controller.validate();
-        this.api.analyzeUser(this.userId)
+        let sessionId = '__sessionId';
+        let transactionId = '__transactionId';
+        let deviceTokenCookie = '__deviceTokenCookie';
+        let userId = this.userId;
+        this.api.analyzeUser(sessionId, transactionId, deviceTokenCookie, userId)
             .then(response => {
                 this.eventAggregator.publish(new AnalyzeUserDone(response));
-            })
-            .catch(error => {
-                this.eventAggregator.publish(new AnalyzeUserDone({
-                    "sessionId": "__session",
-                    "userId": this.userId,
-                    "deviceData": "__devicedata",
-                    "actionCode": "VERIFIED",
-                    "credentialTypes": ["Password"],
-                    "success": true
-                }));
             });
     }
 }

@@ -4,7 +4,6 @@ import {EventAggregator} from 'aurelia-event-aggregator';
 
 @inject(Router, EventAggregator)
 export class Welcome {
-    telephone;
 
     constructor(router, eventAggregator) {
         this.router = router;
@@ -13,5 +12,9 @@ export class Welcome {
 
     activate(params, routeConfig) {
         this.routeConfig = routeConfig;
+    }
+
+    goToLogin(event) {
+        this.router.navigate('login');
     }
 }

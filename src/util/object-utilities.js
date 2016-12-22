@@ -3,19 +3,19 @@ import _ from 'lodash';
 
 let Operators = ODataFilter.Operators;
 
-export var ObjectUtilities = {
+export let ObjectUtilities = {
 
     isEqual: function (objA, objB) {
         if (!objA || !objB) {
             return (!objA && !objB);
         }
-        var aKeys = Object.keys(objA);
-        var bKeys = Object.keys(objB);
+        let aKeys = Object.keys(objA);
+        let bKeys = Object.keys(objB);
         if (aKeys.length !== bKeys.length) {
             return false;
         }
-        for (var i = 0, len = aKeys.length; i < len; i++) {
-            var key = aKeys[i];
+        for (let i = 0, len = aKeys.length; i < len; i++) {
+            let key = aKeys[i];
             if (!objB.hasOwnProperty(key) || objA[key] !== objB[key]) {
                 return false;
             }
@@ -24,7 +24,7 @@ export var ObjectUtilities = {
     },
 
     deepExtend: function (destination, source) {
-        for (var property in source) {
+        for (let property in source) {
             if (source.hasOwnProperty(property)) {
                 if (source[property] && source[property].constructor && source[property].constructor === Object) {
                     destination[property] = destination[property] || {};
@@ -39,7 +39,7 @@ export var ObjectUtilities = {
 
 };
 
-export var PredicateUtilities = {
+export let PredicateUtilities = {
 
     removeMatches(subject, predicates) {
         let predicateList = _.clone(predicates);
@@ -69,10 +69,10 @@ export var PredicateUtilities = {
     }
 };
 
-export var StringUtil = {
+export let StringUtil = {
 
     pluralize: function (str, count) {
-        var s = str;
+        let s = str;
         if (count > 1) {
             if (str.endsWith("y")) {
                 s = str.substring(0, str.length - 1) + 'ies';

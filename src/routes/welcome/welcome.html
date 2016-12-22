@@ -1,8 +1,6 @@
 ﻿<template>
     <h4 i18n="welcome_view_header">Welcome</h4>
-    <form>
-        <phone-input value.bind="telephone"></phone-input>
-        <br>
-        <p>${telephone}</p>
-    </form>
+    <button type="button" class="button" click.trigger="goToLogin($event)">
+        <span i18n="login_button.text">Login</span>
+    </button>
 </template>

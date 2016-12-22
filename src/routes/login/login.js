@@ -5,20 +5,28 @@ import {AnalyzeUserDone, AuthenticateUserDone} from './../../resources/messages/
 
 @inject(Router, EventAggregator)
 export class Login {
+    loginModel = {
+        userId: '',
+        credentials: ''
+    };
     loginViewModel = './analyze-user';
 
     constructor(router, eventAggregator) {
         this.router = router;
         this.eventAggregator = eventAggregator;
-        this.eventAggregator.subscribe(AnalyzeUserDone, response => this.handleAnalyzeUserDone(response));
-        this.eventAggregator.subscribe(AuthenticateUserDone, response => this.handleAuthenticateUserDone(response));
+        this.eventAggregator.subscribe(AnalyzeUserDone, message => this.handleAnalyzeUserDone(message));
+        this.eventAggregator.subscribe(AuthenticateUserDone, message => this.handleAuthenticateUserDone(message));
     }
 
-    handleAnalyzeUserDone(response) {
-        // TODO: pass response to the changed view
+    handleAnalyzeUserDone(message) {
+        let userId = message.data.userId;
+        this.loginModel.userId = userId;
         this.loginViewModel = './authenticate-user-with-credentials';
     }
 
-    handleAuthenticateUserDone(response) {
+    handleAuthenticateUserDone(message) {
+        let userId = message.data.userId;
+        let url = this.router.generate('user-info', {id: userId});
+        this.router.navigate(url);
     }
 }

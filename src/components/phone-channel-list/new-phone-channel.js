@@ -3,8 +3,8 @@ import {ValidationControllerFactory, ValidationController, ValidationRules} from
 
 @inject(ValidationControllerFactory)
 export class NewPhoneChannel {
-    phone = '';
-    formattedPhone = '';
+    phoneNumber = '';
+    formattedPhoneNumber = '';
     verificationCode = '';
     controller = null;
 
@@ -22,5 +22,5 @@ export class NewPhoneChannel {
 }
 
 ValidationRules
-    .ensure(a => a.phone).required()
+    .ensure(a => a.phoneNumber).required()
     .on(NewPhoneChannel);

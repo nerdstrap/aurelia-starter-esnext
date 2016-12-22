@@ -1,25 +1,28 @@
 ﻿import {inject, computedFrom} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
+import {EventAggregator} from 'aurelia-event-aggregator';
 import {ValidationControllerFactory, ValidationController, ValidationRules} from 'aurelia-validation';
 import {InMemoryUserService} from './../../services/in-memory-user-service'
+import {AuthenticateUserDone} from './../../resources/messages/user-messages';
 
-@inject(Router, ValidationControllerFactory, InMemoryUserService)
+@inject(Router, EventAggregator, ValidationControllerFactory, InMemoryUserService)
 export class AuthenticateUserWithCredentials {
     userId = '';
-    userIdHasFocus = true;
     credentials = '';
-    credentialsHasFocus = false;
+    credentialsHasFocus = true;
     controller = null;
     api = null;
 
-    constructor(router, controllerFactory, api) {
+    constructor(router, eventAggregator, controllerFactory, api) {
         this.router = router;
+        this.eventAggregator = eventAggregator;
         this.controller = controllerFactory.createForCurrentScope();
         this.api = api;
     }
 
-    activate(analyzeUserResponse) {
-        //this.userId = analyzeUserResponse.userId;
+    activate(model) {
+        this.userId = model.userId;
+        this.credentials = model.credentials;
     }
 
     @computedFrom('userId', 'credentials')
@@ -31,10 +34,14 @@ export class AuthenticateUserWithCredentials {
 
     authenticateUser() {
         let errors = this.controller.validate();
-        this.api.authenticateUser(this.userId, this.credentials)
+        let sessionId = '__sessionId';
+        let transactionId = '__transactionId';
+        let deviceTokenCookie = '__deviceTokenCookie';
+        let userId = this.userId;
+        let credentials = this.credentials;
+        this.api.authenticateUser(sessionId, transactionId, deviceTokenCookie, userId, credentials)
             .then(response => {
-                let url = this.router.generate('user-info', {id: response.userId});
-                this.router.navigate(url);
+                this.eventAggregator.publish(new AuthenticateUserDone(response));
             });
     }
 }

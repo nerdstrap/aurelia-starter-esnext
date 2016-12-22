@@ -48,6 +48,7 @@ function initialize(aurelia, lng) {
     aurelia.use
         .standardConfiguration()
         .feature('resources')
+        .feature('components')
         // .plugin('aurelia-dialog', config => {
         //     config.useDefaults();
         //     config.settings.lock = true;
@@ -65,9 +66,9 @@ function initialize(aurelia, lng) {
                 lng: lng,
                 attributes: ['t', 'i18n'],
                 fallbackLng: 'en',
-                ns: ['aurelia-starter-esnext'],
-                fallbackNS: ['aurelia-starter-esnext'],
-                defaultNS: 'aurelia-starter-esnext',
+                // ns: ['aurelia-starter-esnext'],
+                // fallbackNS: ['aurelia-starter-esnext'],
+                // defaultNS: 'aurelia-starter-esnext',
                 debug: true
             }).then(() => {
                 aurelia.setupI18NDone = true;

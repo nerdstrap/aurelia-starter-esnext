@@ -8,7 +8,6 @@ export class PhoneChannelListItem {
     }
 
     bind(_item) {
-        console.log(JSON.stringify(_item));
     }
 
     removeItem() {
